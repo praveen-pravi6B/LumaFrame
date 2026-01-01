@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      width: 250px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #1e1e1e;
+      color: #e0e0e0;
+      margin: 0;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .control-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    .presets {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    button.preset {
+      border: none;
+      padding: 8px 4px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      transition: transform 0.1s, box-shadow 0.2s;
+      background: #333;
+      color: #fff;
+    }
+
+    button.preset:hover {
+      transform: translateY(-2px);
+    }
+
+    button.preset.active {
+      box-shadow: 0 0 0 2px #4a90e2;
+      background: #444;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #444;
+      transition: .4s;
+      border-radius: 20px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked+.slider {
+      background-color: #4a90e2;
+    }
+
+    input:checked+.slider:before {
+      transform: translateX(20px);
+    }
+  </style>
+</head>
+
+<body>
+  <h2>
+    LumaFrame
+    <label class="switch">
+      <input type="checkbox" id="power-toggle">
+      <span class="slider"></span>
+    </label>
+  </h2>
+
+  <div class="control-group">
+    <label>Color Preset</label>
+    <div class="presets">
+      <button class="preset" data-color="#ff9329" data-value="3000K">3000K</button>
+      <button class="preset" data-color="#ffffff" data-value="5000K">5000K</button>
+      <button class="preset" data-color="#c9e2ff" data-value="6500K">6500K</button>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label id="width-label">Border Width: 20px</label>
+    <input type="range" id="width-slider" min="1" max="40" value="20">
+  </div>
+
+  <div class="control-group">
+    <label id="brightness-label">Brightness: 50%</label>
+    <input type="range" id="brightness-slider" min="0" max="100" value="50">
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
