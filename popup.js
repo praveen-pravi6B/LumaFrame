@@ -3,11 +3,13 @@ const brightnessSlider = document.getElementById('brightness-slider');
 const brightnessLabel = document.getElementById('brightness-label');
 const widthSlider = document.getElementById('width-slider');
 const widthLabel = document.getElementById('width-label');
+const smartToggle = document.getElementById('smart-toggle');
 const presetButtons = document.querySelectorAll('.preset');
 
 // Load settings
-chrome.storage.local.get(['enabled', 'color', 'brightness', 'width', 'presetName'], (result) => {
+chrome.storage.local.get(['enabled', 'color', 'brightness', 'width', 'presetName', 'smartEnabled'], (result) => {
     powerToggle.checked = result.enabled ?? false;
+    smartToggle.checked = result.smartEnabled ?? false;
 
     const brightness = result.brightness ?? 50;
     brightnessSlider.value = brightness;
@@ -28,6 +30,11 @@ chrome.storage.local.get(['enabled', 'color', 'brightness', 'width', 'presetName
 // Power toggle
 powerToggle.addEventListener('change', () => {
     chrome.storage.local.set({ enabled: powerToggle.checked });
+});
+
+// Smart toggle
+smartToggle.addEventListener('change', () => {
+    chrome.storage.local.set({ smartEnabled: smartToggle.checked });
 });
 
 // Brightness slider
