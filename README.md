@@ -16,13 +16,16 @@ A polished studio-light frame for your browser. Designed for creators, streamers
 
 Since this extension is optimized for your personal use, you can stay updated by following these steps:
 
-1. **Clone the repo**:
-   ```bash
-   git clone https://github.com/praveen-pravi6B/LumaFrame.git
-   ```
-2. **Open Extensions**: Go to `chrome://extensions` in your browser.
-3. **Enable Developer Mode**: Toggle the switch in the top-right corner.
-4. **Load Unpacked**: Click the **Load unpacked** button and select the `LumaFrame` folder.
+### Chrome / Edge
+1. **Clone the repo**: `git clone https://github.com/praveen-pravi6B/LumaFrame.git`
+2. **Open Extensions**: Go to `chrome://extensions`.
+3. **Enable Developer Mode**: Toggle the switch in the top-right.
+4. **Load Unpacked**: Select the `LumaFrame` folder.
+
+### Firefox
+1. **Clone the repo**: Same as above.
+2. **Open Debugging**: Go to `about:debugging#/runtime/this-firefox`.
+3. **Load Temporary Add-on**: Click the button and select the `manifest.json` inside the `LumaFrame` folder.
 
 ## 🤝 Contributing
 

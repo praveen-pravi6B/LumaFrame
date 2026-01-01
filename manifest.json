@@ -3,6 +3,12 @@
   "name": "LumaFrame",
   "version": "1.0",
   "description": "A polished studio-light frame for dark rooms.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "lumaframe@praveen-pravi6b.dev",
+      "strict_min_version": "109.0"
+    }
+  },
   "permissions": [
     "storage"
   ],
